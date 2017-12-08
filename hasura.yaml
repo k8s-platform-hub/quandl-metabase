@@ -4,8 +4,8 @@ gitUrl: https://github.com/hasura/quandl-metabase
 keywords: metabase, quandl, nodejs, node, express
 media:
   images:
-  - https://raw.githubusercontent.com/hasura/base/master/assets/banner1.png
-  - https://raw.githubusercontent.com/hasura/base/master/assets/banner2.png
-  - https://raw.githubusercontent.com/hasura/base/master/assets/banner3.png
+  - https://raw.githubusercontent.comhasura/quandl-metabase/master/assets/banner1.png
+  - https://raw.githubusercontent.comhasura/quandl-metabase/master/assets/banner2.png
+  - https://raw.githubusercontent.comhasura/quandl-metabase/master/assets/banner3.png
 name: quandl-metabase
 platformVersion: v0.15.18
