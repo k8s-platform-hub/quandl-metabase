@@ -1,7 +1,9 @@
 # quandl-metabase
 
 This quickstart, for the most part, consists of two microservices:
+
 1. quandl: Fetches and stores data from [Quandl](https://www.quandl.com/) and stores them in Hasura
+
 2. metabase: Runs [Metabase](https://www.metabase.com/) on this service which can be used to visualise the data fetched from quandl
 
 Follow along below to get the setup working on your cluster and also to understand how this quickstart works.
@@ -51,14 +53,14 @@ $ cd quandl-metabase
 
 Before you begin, head over to [Quandl](https://www.quandl.com/) and select the dataset you would like to use. In this case, we are going with the `Wiki EOD Stock Prices` dataset. Keep in mind the `Vendor Code` (In this case it is, `WIKI`) and `Datatable Code` (`PRICES` in this case) for the dataset.
 
-![Quandl 1](https://raw.githubusercontent.com/hasura/base/master/assets/quandl1.png "Quandl 1")
+![Quandl 1](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/quandl1.png "Quandl 1")
 
-![Quandl 3](https://raw.githubusercontent.com/hasura/base/master/assets/quandl3.png "Quandl 3")
+![Quandl 3](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/quandl3.png "Quandl 3")
 
 
 To fetch the data you need to have an `API Key` which you can get by getting an account with Quandl.
 
-![Quandl 2](https://raw.githubusercontent.com/hasura/base/master/assets/quandl2.png "Quandl 2")
+![Quandl 2](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/quandl2.png "Quandl 2")
 
 Keep a note of your `API Key`.
 
@@ -138,7 +140,7 @@ $ # Run this in the quandl-metabase directory
 $ hasura api-console
 ```
 
-![Console Data 1](https://raw.githubusercontent.com/hasura/base/master/assets/console_data_initial.png "Console Data 1")
+![Console Data 1](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/console_data_initial.png "Console Data 1")
 
 Let's use our `quandl` service to insert some data. To do this:
 
@@ -153,11 +155,11 @@ POST https://quandl.<CLUSTER-NAME>.hasura-app.io/add_data // remember to replace
 
 You can use a HTTP client of your choosing to make this request. Alternatively, you can also use the `API Explorer` provided by the Hasura `api console` to do this.
 
-![Console Data 2](https://raw.githubusercontent.com/hasura/base/master/assets/console_api_explorer_quandl_api.png "Console Data 2")
+![Console Data 2](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/console_api_explorer_quandl_api.png "Console Data 2")
 
 Once you have successfully made the above API call. Head back to your `api console` and you will see a new table called `wiki_prices` with about 10000 rows of data in it.
 
-![Console Data 3](https://raw.githubusercontent.com/hasura/base/master/assets/console_data_wiki_prices.png "Console Data 3")
+![Console Data 3](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/console_data_wiki_prices.png "Console Data 3")
 
 ## Visualising the data using Metabase
 
@@ -165,25 +167,25 @@ Once you have successfully made the above API call. Head back to your `api conso
 
 Head over to the EXTERNAL-URL of your `metabase` service.
 
-![Metabase 1](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_welcome.png "Metabase 1")
+![Metabase 1](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_welcome.png "Metabase 1")
 
 ### SignUp
 
 Enter your details. Click on `Add my data later` in Step 2 and complete the sign up process
 
-![Metabase 2](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_signup.png "Metabase 2")
+![Metabase 2](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_signup.png "Metabase 2")
 
 ### Metabase Dashboard
 
 You will now reach your `Dashboard`
 
-![Metabase 3](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_home.png "Metabase 3")
+![Metabase 3](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_home.png "Metabase 3")
 
 ### Connecting Hasura's database to Metabase
 
 Now, let's connect our Hasura database to `metabase`
 
-![Metabase 4](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_add_database.png "Metabase 4")
+![Metabase 4](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_add_database.png "Metabase 4")
 
 To get your `Database password`, go to your terminal:
 
@@ -196,17 +198,17 @@ In the list that comes up, the value for `postgres.password` is your `Database p
 
 If everything goes well, you will see the following
 
-![Metabase 5](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_database_added.png "Metabase 5")
+![Metabase 5](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_database_added.png "Metabase 5")
 
 ### Visualising the data
 
 Click on `New question` and select `Custom`
 
-![Metabase 6](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_new_question.png "Metabase 6")
+![Metabase 6](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_new_question.png "Metabase 6")
 
 In the `Data` dropdown, select `hasuradb` `Public` and then search for `wiki_prices`
 
-![Metabase 7](https://raw.githubusercontent.com/hasura/base/master/assets/metabase_new_question2.png "Metabase 7")
+![Metabase 7](https://raw.githubusercontent.com/hasura/quandl-metabase/master/assets/metabase_new_question2.png "Metabase 7")
 
 And that's it!
 
