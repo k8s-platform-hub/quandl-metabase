@@ -1,0 +1,10 @@
+description: A quickstart show casing using Metabase for data visualisation using data from Quandl.
+keywords: metabase, quandl, nodejs, node, express
+name: quandl-metabase
+platformVersion: v0.15.18
+gitUrl: https://github.com/hasura/quandl-metabase
+media:
+  images:
+    - https://raw.githubusercontent.com/hasura/base/master/assets/banner1.png
+    - https://raw.githubusercontent.com/hasura/base/master/assets/banner2.png
+    - https://raw.githubusercontent.com/hasura/base/master/assets/banner3.png

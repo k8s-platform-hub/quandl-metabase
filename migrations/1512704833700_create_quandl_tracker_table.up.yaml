@@ -1,0 +1,6 @@
+- args:
+    sql: CREATE TABLE "quandl_checkpoint"(vendor_code text NOT NULL, datatable_code text NOT NULL, next_offset text, PRIMARY KEY(vendor_code, datatable_code)); COMMENT ON TABLE "quandl_checkpoint" is 'This table stores the checkpoint for each quandl table';
+  type: run_sql
+- args:
+    name: quandl_checkpoint
+  type: add_existing_table_or_view
